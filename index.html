@@ -70,12 +70,44 @@
             border: 2px dashed #ccc;
             display: none;
         }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: #fff;
+            text-align: center;
+        }
+
+        .overlay button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background: #ff3f6c;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+        }
     </style>
 
-    <!-- SOCIAL BAR AD (loads globally) -->
+    <!-- SOCIAL BAR AD -->
     <script src="https://pl28615741.effectivegatecpm.com/b3/e3/59/b3e35950fd4ac0e57ea2e91af9123e26.js"></script>
 </head>
 <body>
+
+<!-- FIRST CLICK OVERLAY -->
+<div class="overlay" id="overlay">
+    <div>
+        <h2>❤️ Check Your Love Compatibility</h2>
+        <p>Tap continue to start</p>
+        <button onclick="startExperience()">Continue</button>
+    </div>
+</div>
 
 <div class="container">
     <h1>❤️ Love Calculator</h1>
@@ -119,6 +151,13 @@
         );
     }
 
+    // FIRST USER CLICK → ADS FIRE
+    function startExperience() {
+        openSmartLink();
+        loadPopUnder();
+        document.getElementById("overlay").style.display = "none";
+    }
+
     function calculateLove() {
         var name1 = document.getElementById("name1").value.trim();
         var name2 = document.getElementById("name2").value.trim();
@@ -127,10 +166,6 @@
             alert("Please enter both names ❤️");
             return;
         }
-
-        // 🔥 Trigger ads on user action
-        loadPopUnder();
-        openSmartLink();
 
         var lovePercent = Math.floor(Math.random() * 51) + 50;
 
