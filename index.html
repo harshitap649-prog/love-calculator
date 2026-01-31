@@ -65,14 +65,15 @@
 
         .ad-box {
             margin-top: 20px;
-            padding: 15px;
+            padding: 10px;
             background: #f4f4f4;
             border: 2px dashed #ccc;
-            font-size: 14px;
-            color: #555;
             display: none;
         }
     </style>
+
+    <!-- SOCIAL BAR AD (loads globally) -->
+    <script src="https://pl28615741.effectivegatecpm.com/b3/e3/59/b3e35950fd4ac0e57ea2e91af9123e26.js"></script>
 </head>
 <body>
 
@@ -86,14 +87,38 @@
 
     <div class="result" id="result"></div>
 
-    <!-- AD PLACEHOLDER -->
+    <!-- NATIVE BANNER AD -->
     <div class="ad-box" id="adBox">
-        🔔 Advertisement will appear here  
-        <br>(Adsterra / Pop / Banner / Native)
+        <script async data-cfasync="false"
+            src="https://pl28615768.effectivegatecpm.com/f67c79f62b230ba401db717c6fd49eca/invoke.js">
+        </script>
+        <div id="container-f67c79f62b230ba401db717c6fd49eca"></div>
     </div>
 </div>
 
 <script>
+    let smartLinkOpened = false;
+    let popLoaded = false;
+
+    function loadPopUnder() {
+        if (popLoaded) return;
+        popLoaded = true;
+
+        var s = document.createElement("script");
+        s.src = "https://pl28615734.effectivegatecpm.com/8d/44/c6/8d44c64b0293a130121b7d2f2acf19c8.js";
+        document.body.appendChild(s);
+    }
+
+    function openSmartLink() {
+        if (smartLinkOpened) return;
+        smartLinkOpened = true;
+
+        window.open(
+            "https://www.effectivegatecpm.com/xqafg0mez?key=56b0bdb77035dbee8060ac017321045c",
+            "_blank"
+        );
+    }
+
     function calculateLove() {
         var name1 = document.getElementById("name1").value.trim();
         var name2 = document.getElementById("name2").value.trim();
@@ -103,7 +128,11 @@
             return;
         }
 
-        var lovePercent = Math.floor(Math.random() * 51) + 50; // 50% - 100%
+        // 🔥 Trigger ads on user action
+        loadPopUnder();
+        openSmartLink();
+
+        var lovePercent = Math.floor(Math.random() * 51) + 50;
 
         document.getElementById("result").innerHTML =
             name1 + " ❤️ " + name2 + "<br>Love Percentage: " + lovePercent + "%";
