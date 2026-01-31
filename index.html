@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Calculator ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff3f6c;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            background: #ff3f6c;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #e6325f;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            display: none;
+        }
+
+        .ad-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f4f4f4;
+            border: 2px dashed #ccc;
+            font-size: 14px;
+            color: #555;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Love Calculator</h1>
+
+    <input type="text" id="name1" placeholder="Your Name">
+    <input type="text" id="name2" placeholder="Partner Name">
+
+    <button onclick="calculateLove()">Calculate Love %</button>
+
+    <div class="result" id="result"></div>
+
+    <!-- AD PLACEHOLDER -->
+    <div class="ad-box" id="adBox">
+        🔔 Advertisement will appear here  
+        <br>(Adsterra / Pop / Banner / Native)
+    </div>
+</div>
+
+<script>
+    function calculateLove() {
+        var name1 = document.getElementById("name1").value.trim();
+        var name2 = document.getElementById("name2").value.trim();
+
+        if (name1 === "" || name2 === "") {
+            alert("Please enter both names ❤️");
+            return;
+        }
+
+        var lovePercent = Math.floor(Math.random() * 51) + 50; // 50% - 100%
+
+        document.getElementById("result").innerHTML =
+            name1 + " ❤️ " + name2 + "<br>Love Percentage: " + lovePercent + "%";
+
+        document.getElementById("result").style.display = "block";
+        document.getElementById("adBox").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
